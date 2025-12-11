@@ -37,6 +37,42 @@ pm.execute_notebook(
 )
 
 # Chạy Notebook Apriori Modelling
+# pm.execute_notebook(
+#     "notebooks/apriori_modelling.ipynb",
+#     "notebooks/runs/apriori_modelling_run.ipynb",
+#     parameters=dict(
+#         BASKET_BOOL_PATH="data/processed/basket_bool.parquet",
+#         RULES_OUTPUT_PATH="data/processed/rules_apriori_filtered.csv",
+
+#         # Tham số Apriori
+#         MIN_SUPPORT=0.01,
+#         MAX_LEN=3,
+
+#         # Generate rules
+#         METRIC="lift",
+#         MIN_THRESHOLD=1.0,
+
+#         # Lọc luật
+#         FILTER_MIN_SUPPORT=0.01,
+#         FILTER_MIN_CONF=0.3,
+#         FILTER_MIN_LIFT=3.0,
+#         FILTER_MAX_ANTECEDENTS=2,
+#         FILTER_MAX_CONSEQUENTS=1,
+
+#         # Số luật để vẽ
+#         TOP_N_RULES=20,
+
+#         # Tắt plot khi chạy batch (bật = True nếu muốn xem hình)
+#         PLOT_TOP_LIFT=False,
+#         PLOT_TOP_CONF=False,
+#         PLOT_SCATTER=False,
+#         PLOT_NETWORK=False,
+#         PLOT_PLOTLY_NETWORK=False,
+#         PLOT_PLOTLY_SCATTER=False,  
+#     ),
+#     kernel_name="python3",
+# )
+# ... phần trên giữ nguyên
 pm.execute_notebook(
     "notebooks/apriori_modelling.ipynb",
     "notebooks/runs/apriori_modelling_run.ipynb",
@@ -44,34 +80,23 @@ pm.execute_notebook(
         BASKET_BOOL_PATH="data/processed/basket_bool.parquet",
         RULES_OUTPUT_PATH="data/processed/rules_apriori_filtered.csv",
 
-        # Tham số Apriori
-        MIN_SUPPORT=0.01,
-        MAX_LEN=3,
-
-        # Generate rules
-        METRIC="lift",
-        MIN_THRESHOLD=1.0,
-
-        # Lọc luật
+        # Giữ support thấp vừa phải để không bị lọc mất quá nhiều
+        MIN_SUPPORT=0.01, 
+        
+        # Cấu hình bộ lọc
         FILTER_MIN_SUPPORT=0.01,
         FILTER_MIN_CONF=0.3,
         FILTER_MIN_LIFT=1.2,
-        FILTER_MAX_ANTECEDENTS=2,
-        FILTER_MAX_CONSEQUENTS=1,
 
-        # Số luật để vẽ
-        TOP_N_RULES=20,
+        # QUAN TRỌNG: Tăng số lượng luật lên 50 để vẽ đồ thị mạng lưới rõ hơn
+        TOP_N_RULES=50, 
 
-        # Tắt plot khi chạy batch (bật = True nếu muốn xem hình)
-        PLOT_TOP_LIFT=False,
-        PLOT_TOP_CONF=False,
+        # Bật vẽ biểu đồ Network (Đây là vũ khí chính của chủ đề này)
+        PLOT_NETWORK=True,
+        PLOT_TOP_LIFT=True, # Bật thêm cái này để xem top
         PLOT_SCATTER=False,
-        PLOT_NETWORK=False,
-        PLOT_PLOTLY_NETWORK=False,
-        PLOT_PLOTLY_SCATTER=False,  
     ),
     kernel_name="python3",
 )
-
 
 print("Đã chạy xong pipeline")

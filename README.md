@@ -18,10 +18,10 @@ Nguyên lý cốt lõi:
 ### 1.2. Chiến lược chính
 - **Xây dựng từ dưới lên (Bottom-up)**  
   Bắt đầu từ 1-itemset → 2-itemset → 3-itemset …
-  ![Xây dựng từ dưới lên](image/anh1.png)
+  ![Xây dựng từ dưới lên](images/anh1.png)
 - **Tìm kiếm theo chiều rộng (Breadth-first search – BFS)**  
   Duyệt toàn bộ các itemset cùng kích thước trước khi tăng cấp.
-![Tìm kiếm theo chiều rộng](image/anh2.png)
+![Tìm kiếm theo chiều rộng](images/anh2.png)
 ### 1.3. Mục tiêu của Apriori
 - Phát hiện các **mối quan hệ mua kèm** giữa các sản phẩm
 - Hỗ trợ:

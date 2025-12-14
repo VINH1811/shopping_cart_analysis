@@ -31,7 +31,7 @@ Nguyên lý cốt lõi:
 
 Ví dụ:
 > Nếu nhiều khách hàng mua *điện thoại* kèm *kính cường lực* → sinh ra luật kết hợp có giá trị cho bán chéo.
-
+![ảnh ví dụ](images/vd.png)
 ---
 
 ## 2. Các chỉ số cốt lõi trong Apriori
@@ -140,6 +140,7 @@ rules = rules.sort_values(["lift", "confidence"], ascending=False)
 ## 6. Kết quả & Trực quan hóa
 
 ### 6.1. Cụm sản phẩm HERB MARKER
+![ảnh mạng lưới](images/anhnetwork.png)
 Các sản phẩm hình thành một cụm liên kết chặt chẽ:
 - HERB MARKER PARSLEY
 - HERB MARKER THYME
@@ -151,7 +152,7 @@ Các sản phẩm hình thành một cụm liên kết chặt chẽ:
 ### 6.2. Product Hub trung tâm
 - **HERB MARKER THYME**
 - **HERB MARKER PARSLEY**
-
+![ảnh top 50 luật theo lift](images/topluat.png)
 Hai sản phẩm này có:
 - Nhiều liên kết vào/ra nhất
 - Khả năng kéo theo các sản phẩm khác trong giỏ hàng

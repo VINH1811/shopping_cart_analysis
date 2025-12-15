@@ -80,20 +80,16 @@ pm.execute_notebook(
         BASKET_BOOL_PATH="data/processed/basket_bool.parquet",
         RULES_OUTPUT_PATH="data/processed/rules_apriori_filtered.csv",
 
-        # Giữ support thấp vừa phải để không bị lọc mất quá nhiều
         MIN_SUPPORT=0.01, 
         
-        # Cấu hình bộ lọc
         FILTER_MIN_SUPPORT=0.01,
         FILTER_MIN_CONF=0.3,
         FILTER_MIN_LIFT=1.2,
 
-        # QUAN TRỌNG: Tăng số lượng luật lên 50 để vẽ đồ thị mạng lưới rõ hơn
         TOP_N_RULES=50, 
 
-        # Bật vẽ biểu đồ Network (Đây là vũ khí chính của chủ đề này)
         PLOT_NETWORK=True,
-        PLOT_TOP_LIFT=True, # Bật thêm cái này để xem top
+        PLOT_TOP_LIFT=True, 
         PLOT_SCATTER=False,
     ),
     kernel_name="python3",
